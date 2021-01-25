@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+    function showcommentform() {
+
+	var email = document.getElementById("email").value;
+	var reg = /[a-zA-Z]+@[a-zA-Z]+(.[a-zA-Z]{2,})+$/;
+    var alertMail;
+    if(email != ''){
+        if (reg.test(email)) {
+            alertMail="Please enter a valid e-mail address.";
+            document.getElementById("mail").innerHTML=alertMail;
+        }
+    }
+    else{
+    	alertMail = " email is not empty";
+    	document.getElementById("mail").innerHTML=alertMail;
+    }
+    }
+</script>
+<form name="myForm">
+	<label for="email">Email:</label><br>
+	<input type="text" name="email" id="email"><br>
+	<span id="mail"></span><br> 
+    <input type="button" value="comment" onclick="showcommentform()">
+</form>
+</body>
+</html>
